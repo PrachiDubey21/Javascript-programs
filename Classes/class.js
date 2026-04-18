@@ -60,6 +60,7 @@ sayvalue(null);
 sayvalue(undefined);
 
 console.log();
+console.log();
 
 function getage() {
   return 190;
