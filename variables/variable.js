@@ -49,6 +49,8 @@ console.log(c);
 //null = null inserted
 //big int = (2^53)-1
 
+console.table([age , name1 , _ , $ , x , c ])
+
 
 
 
