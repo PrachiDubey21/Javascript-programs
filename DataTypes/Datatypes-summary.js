@@ -35,3 +35,14 @@ const myFunction = function(){         //type - object function
 console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+
+
+
+//------------------------------------------------------------------
+//Memory
+
+//stack -> primitive
+//heap -> non primitive
