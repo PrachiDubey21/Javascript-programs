@@ -4,7 +4,7 @@
 const instaUser = {}
 
 instaUser.id = "123abc"
-instaUser.name = "Sammy"
+instaUser.name = "pichi"
 instaUser.isLoggedIn = false
 
 // console.log(instaUser);
@@ -26,12 +26,17 @@ const obj2 = {3: "a", 4: "b"}
 const obj4 = {5: "a", 6: "b"}
 
 // const obj3 = { obj1, obj2 }
+
+//{} -> target , source
 // const obj3 = Object.assign({}, obj1, obj2, obj4)
 
+
+//spread operator (mostly used)
 const obj3 = {...obj1, ...obj2}
 // console.log(obj3);
 
 
+//array of object
 const users = [
     {
         id: 1,
@@ -54,7 +59,7 @@ users[1].email
 // console.log(Object.values(instaUser));
 // console.log(Object.entries(instaUser));
 
-// console.log(instaUser.hasOwnProperty('isLoggedIn'));
+// console.log(instaUser.hasOwnProperty('isLoggedIn'));     //true/false
 
 
 const course = {
