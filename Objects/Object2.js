@@ -61,6 +61,9 @@ users[1].email
 
 // console.log(instaUser.hasOwnProperty('isLoggedIn'));     //true/false
 
+//-------------------------------------------------------------------------
+
+//Object destructure
 
 const course = {
     coursename: "js in hindi",
@@ -68,13 +71,19 @@ const course = {
     courseInstructor: "hitesh"
 }
 
-// course.courseInstructor
+
+//Ways of accessing values
+
+// console.log(course.courseInstructor);
+
+//const {courseInstructor} = course
+// console.log(courseInstructor);
 
 const {courseInstructor: instructor} = course
-
-// console.log(courseInstructor);
 console.log(instructor);
 
+
+                  //JSON (key and value -> string(usually))
 // {
 //     "name": "hitesh",
 //     "coursename": "js in hindi",
