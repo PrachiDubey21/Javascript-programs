@@ -39,14 +39,19 @@ function loginUserMessage(username = "sam"){
 // console.log(loginUserMessage()
 
 
+//When we dont know the number of parameters
+//Rest operator
+//collects all the remaining data and returns it all 
 function calculateCartPrice(val1, val2, ...num1){
     return num1
 }
 
 // console.log(calculateCartPrice(200, 400, 500, 2000))
 
+
+//passing object in function
 const user = {
-    username: "hitesh",
+    username: "prachi",
     prices: 199
 }
 
@@ -55,11 +60,14 @@ function handleObject(anyobject){
 }
 
 // handleObject(user)
+
 handleObject({
     username: "sam",
     price: 399
 })
 
+
+//passing array in function
 const myNewArray = [200, 400, 100, 600]
 
 function returnSecondValue(getArray){
