@@ -14,16 +14,19 @@ if (true) {
 // console.log(b);
 // console.log(c);
 
-//(core scope) and (code enviornment) global scope are different
+//(core scope) (like inspect consolle) and (code enviornment) (terminal)
+// global scope are different
 
 
+//nested scope
 function one(){
-    const username = "hitesh"
+    const username = "prachi"
 
     function two(){
         const website = "youtube"
         console.log(username);
     }
+    //not accessible
     // console.log(website);
 
      two()
@@ -33,14 +36,16 @@ function one(){
 // one()
 
 if (true) {
-    const username = "hitesh"
-    if (username === "hitesh") {
+    const username = "prachi"
+    if (username === "prachi") {
         const website = " youtube"
         // console.log(username + website);
     }
+    //not accessible
     // console.log(website);
 }
 
+//not accessible
 // console.log(username);
 
 
@@ -53,8 +58,7 @@ function addone(num){
     return num + 1
 }
 
-
-
+//Hoisting
 addTwo(5)
 const addTwo = function(num){
     return num + 2
