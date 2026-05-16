@@ -2,7 +2,7 @@
 
 
 
-
+//------------------------------------------------------------------------------
 
 
 //JavaScript is a dynamically typed language. 
@@ -22,6 +22,72 @@ and the type checking is done at compile-time, before the code is executed.
 Languages like Java, C++, and TypeScript are statically typed, 
 and they require you to specify the variable type explicitly 
 when declaring them
+
+
+
+//----------------------------------------------------------------------
+
+
+
+//execution flow
+
+Javascript is single threaded (here everything is a process)
+      -> global execution context
+      -> Functional execution context
+   -> eval execution context (property of global object)
+
+   1. global execution phase
+   2. Memory creation phase
+   3. execution phase
+
+
+//program flow
+
+//global execution phase
+   -> this
+
+//Memory Creation phase(everything is initialized with null)
+
+ for let var1 = 10;
+    1. var1 = undefined
+    2. same with Function
+    3. same with function calls
+
+//execution phase (initialized with data)
+
+    1. var1 = 10;
+
+    2. for function [new variable environment + execution thread]
+                     // box like structure
+                     //new executional context  
+                     //again this box will go through every phase
+                     //for the entire function that is being called
+
+                     //(val1 , val2){
+                        total
+                     }
+
+                     // first phase
+                     //so val1 = val2 = total = undefined
+
+                     //now second phase
+                     //assign data
+
+                     //returns the value if any in global execution context
+
+                     //at last it gets deleted
+
+    3. function calls gets there value calculated 
+
+
+
+
+//call stack
+
+//from bottom
+
+1. global execution phase
+2. methods that are called
 
 
 
