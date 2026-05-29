@@ -3,6 +3,7 @@ const body = document.querySelector('body');
 
 //NodeList
 buttons.forEach(function (button) {
+  //events
   button.addEventListener('click', function (e) {
 
     if (e.target.id === 'pink') {
