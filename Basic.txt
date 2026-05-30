@@ -93,7 +93,7 @@ Javascript is single threaded (here everything is a process)
 
 
 
-//tailwind
+//tailwind commands
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss@latest init -p
 npm list tailwindcss
