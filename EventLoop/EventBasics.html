@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+
+  </head>
+
+  <body style="background-color: #414141; color: aliceblue">
+
+    <h2>Amazing image</h2>
+
+    <div>
+
+      <ul id="images">
+
+        <li>
+
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop" />
+
+        </li>
+
+        <li>
+
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="" />
+
+        </li>
+
+        <li>
+
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""/>
+
+        </li>
+
+        <li>
+
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""/>
+
+        </li>
+
+        <li>
+
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="" />
+
+        </li>
+
+        <li>
+
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a >
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </body>
+
+  <script>
+
+                                  //EVENTS
+
+
+    //using EventListener is more better
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+
+
+
+    //ques -> whats the 3rd parameter (false) used for ?
+    //whats the purpose?
+    //3rd parameter is by default false so no need to write it
+
+     // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // })
+
+
+
+ //-----------------------------------------------------------------------
+
+
+    //used in early time (for internet explorer)
+    // attachEvent()
+    // jQuery(like react nowadays) - on (like addEventListener)
+
+
+//--------------------------------------------------------------------------
+
+           //THINGS TO LEARN ABOUT
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+//---------------------------------------------------------------------------
+
+
+    //EVENT PROPAGATION
+              // ->event bubbling (down to upwards)     -> by false
+              // ->event capturing (up to downwards)    -> by true
+
+
+
+              
+                                 // 1) BUBBLING             
+
+
+                                  //UL element
+                 //will execute after every li element event
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+
+
+                             //LI element inside the UL
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, false)
+
+
+
+                                            
+                                 // 2) CAPTURING
+
+
+                                     //UL element
+                 //will execute before every li element event
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+
+
+                             //LI element inside the UL
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, true)
+
+
+//--------------------------------------------------------------------------
+
+//stopPropahgation will stop the bubbling/capturing of events 
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+
+//-------------------------------------------------------------------------------
+
+//stops the default behaviour
+//won't navigate you to google link in this case
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+//------------------------------------------------------------------------------
+
+//this is to remove the image as soon as we click on them
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+
+      console.log(e);
+      console.log(e.target);
+      console.log(e.target.parentNode);      //full Li
+
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+
+        //or
+
+        //removeIt.parentNode.removeChild(removeIt)
+
+        //or
+
+
+        //better way
+      console.log(e.target.tagName);
+
+      if (e.target.tagName === "IMG") {
+
+        console.log(e.target.id);
+        
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+
+      }
+
+    },false);
+
+//-----------------------------------------------------------------------------
+
+  </script>
+
+</html>
