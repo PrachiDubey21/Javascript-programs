@@ -100,3 +100,6 @@ npm list tailwindcss
 style.css -> @import "tailwindcss";
 
 
+//js is a sequentially run language with an exception of "events"
+
+
