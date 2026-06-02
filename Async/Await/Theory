@@ -5,11 +5,18 @@
 
 <!-- Single-Threaded Language
 
-JavaScript is a single-threaded language, which means it has only one call stack and can execute only one task at a time. It processes code sequentially, executing one statement before moving to the next.
-
-Because JavaScript runs on a single thread, if a task takes a long time to complete, it can block the execution of other code. To handle operations such as API requests, timers, and file operations efficiently, JavaScript uses asynchronous programming, along with features like the Event Loop, Callbacks, Promises, and Async/Await.
-
-For example, when JavaScript encounters a setTimeout() or an API call, it delegates the task to browser or runtime APIs and continues executing other code. Once the task is complete, its callback is placed in a queue and executed when the call stack becomes empty. -->
+JavaScript is a single-threaded language, which means it has only one 
+call stack and can execute only one task at a time. It processes code 
+sequentially, executing one statement before moving to the next.
+Because JavaScript runs on a single thread, if a task takes a long
+time to complete, it can block the execution of other code. To handle 
+operations such as API requests, timers, and file operations efficiently,
+JavaScript uses asynchronous programming, along with features like
+the Event Loop, Callbacks, Promises, and Async/Await.
+For example, when JavaScript encounters a setTimeout() or an API call, 
+it delegates the task to browser or runtime APIs and continues 
+executing other code. Once the task is complete, its callback 
+is placed in a queue and executed when the call stack becomes empty. -->
 
 
 
@@ -17,9 +24,13 @@ For example, when JavaScript encounters a setTimeout() or an API call, it delega
 
 <!-- Synchronous Code in JavaScript
 
-Synchronous code executes one statement at a time in sequence. JavaScript waits for the current operation to finish before moving to the next one, so each task blocks the execution of the tasks that follow it.
-
-This type of execution is simple and predictable because the code runs from top to bottom in order. However, if a task takes a long time to complete, the entire program must wait, which can make the application less responsive. -->
+Synchronous code executes one statement at a time in sequence. 
+JavaScript waits for the current operation to finish before moving 
+to the next one, so each task blocks the execution of the tasks that follow it.
+This type of execution is simple and predictable because the code runs 
+from top to bottom in order. However, if a task takes a long time to 
+complete, the entire program must wait, which can make the application 
+less responsive. -->
 
 
 
@@ -27,11 +38,17 @@ This type of execution is simple and predictable because the code runs from top 
 
 <!-- Asynchronous Code in JavaScript
 
-Asynchronous code is code that allows JavaScript to start a task and continue executing other code without waiting for that task to finish. Instead of blocking the program, the result of the task is handled later when it becomes available.
-
-Asynchronous programming is commonly used for operations that take time, such as API requests, database queries, file reading, and timers. This helps keep applications responsive and prevents the program from freezing while waiting for these operations to complete.
-
-For example, when using setTimeout() or fetching data from an API, JavaScript continues executing the remaining code and processes the result once the operation is finished. -->
+Asynchronous code is code that allows JavaScript to start a task 
+and continue executing other code without waiting for that task to 
+finish. Instead of blocking the program, the result of the task is 
+handled later when it becomes available.
+Asynchronous programming is commonly used for operations that 
+take time, such as API requests, database queries, file reading, 
+and timers. This helps keep applications responsive and prevents 
+the program from freezing while waiting for these operations to complete.
+For example, when using setTimeout() or fetching data from an API, 
+JavaScript continues executing the remaining code and processes 
+the result once the operation is finished. -->
 
 
 
@@ -39,9 +56,14 @@ For example, when using setTimeout() or fetching data from an API, JavaScript co
 
 <!-- Async Function in JavaScript
 
-An async function is a special type of function that allows you to work with asynchronous operations more easily using the await keyword. It helps write asynchronous code in a way that looks and behaves like synchronous code, making it easier to read and understand.
-
-When a function is declared with the async keyword, it automatically returns a Promise. Inside an async function, the await keyword can be used to pause the function's execution until a Promise is resolved, without blocking the rest of the program.
+An async function is a special type of function that allows you 
+to work with asynchronous operations more easily using the await 
+keyword. It helps write asynchronous code in a way that looks and 
+behaves like synchronous code, making it easier to read and understand.
+When a function is declared with the async keyword, it automatically 
+returns a Promise. Inside an async function, the await keyword can 
+be used to pause the function's execution until a Promise is resolved, 
+without blocking the rest of the program.
 
 Example:
 
@@ -50,7 +72,8 @@ async function getData() {
     console.log("Data received");
 }
 
-In this example, await waits for the data to be fetched before moving to the next line, while other JavaScript code can continue running. -->
+In this example, await waits for the data to be fetched before 
+moving to the next line, while other JavaScript code can continue running. -->
 
 
 
@@ -58,7 +81,10 @@ In this example, await waits for the data to be fetched before moving to the nex
 
 <!-- Promise in JavaScript
 
-A Promise is an object that represents the eventual result of an asynchronous operation. It acts as a placeholder for a value that may not be available immediately but will be available at some point in the future.
+A Promise is an object that represents the eventual result of 
+an asynchronous operation. It acts as a placeholder for a 
+value that may not be available immediately but will be available 
+at some point in the future.
 
 A Promise can be in one of three states:
 
@@ -66,7 +92,8 @@ Pending – the operation is still in progress.
 Fulfilled (Resolved) – the operation completed successfully.
 Rejected – the operation failed.
 
-Promises help manage asynchronous code more effectively than callbacks and can be handled using .then(), .catch(), and async/await.
+Promises help manage asynchronous code more effectively than 
+callbacks and can be handled using .then(), .catch(), and async/await.
 
 Example:
 const promise = new Promise((resolve, reject) => {
@@ -77,7 +104,8 @@ promise.then((result) => {
     console.log(result);
 });
 
-In this example, the Promise is resolved with the value "Success", and the .then() method receives and prints that value. -->
+In this example, the Promise is resolved with the value "Success", 
+and the .then() method receives and prints that value. -->
 
 
 
@@ -85,19 +113,28 @@ In this example, the Promise is resolved with the value "Success", and the .then
 
 <!-- Execution Context in JavaScript
 
-An Execution Context is the environment in which JavaScript code is executed. It contains all the information needed to run the code, including variables, functions, and the value of this.
-
-Whenever JavaScript executes a script or calls a function, it creates an execution context. The execution context determines what code is currently being executed and provides access to the necessary data for that code.
+An Execution Context is the environment in which JavaScript 
+code is executed. It contains all the information needed to run 
+the code, including variables, functions, and the value of this.
+Whenever JavaScript executes a script or calls a function, 
+it creates an execution context. The execution context determines 
+what code is currently being executed and provides access to the 
+necessary data for that code.
 
 There are mainly two types of execution contexts:
 
-Global Execution Context (GEC) – Created when the JavaScript program starts. It is the default execution context and is created only once.
-Function Execution Context (FEC) – Created every time a function is invoked. Each function call gets its own execution context.
+Global Execution Context (GEC) – Created when the JavaScript program starts. 
+It is the default execution context and is created only once.
+Function Execution Context (FEC) – Created every time a function is invoked. 
+Each function call gets its own execution context.
 
 The execution context is created in two phases:
 
-Memory Creation Phase – JavaScript allocates memory for variables and functions. Variables are initialized with undefined, and function definitions are stored completely.
-Execution Phase – JavaScript executes the code line by line and assigns actual values to variables. -->
+Memory Creation Phase – JavaScript allocates memory for variables and 
+functions. Variables are initialized with undefined, and function 
+definitions are stored completely.
+Execution Phase – JavaScript executes the code line by line and assigns 
+actual values to variables. -->
 
 
 
@@ -105,11 +142,22 @@ Execution Phase – JavaScript executes the code line by line and assigns actual
 
 <!-- Blocking Code vs Non-Blocking Code in JavaScript
 
-Blocking code is code that prevents the execution of other code until the current task is completed. JavaScript waits for the operation to finish before moving to the next statement. Long-running calculations or synchronous operations are examples of blocking code.
+Blocking code is code that prevents the execution of other 
+code until the current task is completed. JavaScript waits 
+for the operation to finish before moving to the next statement. 
+Long-running calculations or synchronous operations are examples 
+of blocking code.
 
-Non-blocking code is code that allows JavaScript to continue executing other tasks without waiting for the current operation to complete. The operation runs asynchronously, and its result is handled later through callbacks, Promises, or async/await.
+Non-blocking code is code that allows JavaScript to continue 
+executing other tasks without waiting for the current operation to complete. 
+The operation runs asynchronously, and its result is handled later through 
+callbacks, Promises, or async/await.
 
-For example, a large loop that takes several seconds to complete is blocking because the program cannot do anything else until the loop finishes. On the other hand, setTimeout() is non-blocking because JavaScript schedules the task and immediately continues executing the remaining code. -->
+For example, a large loop that takes several seconds to complete 
+is blocking because the program cannot do anything else until the 
+loop finishes. On the other hand, setTimeout() is non-blocking because 
+JavaScript schedules the task and immediately continues executing the 
+remaining code. -->
 
 
 
