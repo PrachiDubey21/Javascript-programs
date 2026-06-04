@@ -1,0 +1,30 @@
+<!-- Promise and Its States in JavaScript
+
+A Promise is an object that represents the eventual result of an asynchronous 
+operation. It acts as a placeholder for a value that may be available now, later,
+ or never. Promises are used to handle asynchronous tasks such as API requests, file operations, and database queries.
+ 
+A Promise can exist in three states:
+
+Pending – The initial state. The asynchronous operation is still in progress, 
+and the result is not yet available.
+Fulfilled (Resolved) – The operation has completed successfully, and the 
+Promise returns a value.
+Rejected – The operation has failed, and the Promise returns an error or 
+reason for failure. -->
+
+<!-- Example:
+
+const promise = new Promise((resolve, reject) => {
+    let success = true;
+
+    if (success) {
+        resolve("Operation Successful");
+    } else {
+        reject("Operation Failed");
+    }
+});
+
+In this example, the Promise starts in the Pending state. If success is true,
+it becomes Fulfilled and returns "Operation Successful". If success is false, 
+it becomes Rejected and returns an error message. -->
