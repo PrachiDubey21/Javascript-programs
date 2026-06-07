@@ -123,6 +123,14 @@ consumePromiseFive()
 
 
 //thenable
+//fetch returns a promise 
+
+//fetch -> data:_ -> global memory(response),
+//         Onfulfilled[](404 error counts here) -> data ,
+//         OnRejection[]
+
+//      -> web Browser/node -> network request  
+
 fetch('https://api.github.com/users/PrachiDubey21')
 .then((response) => {
     return response.json()
