@@ -107,6 +107,7 @@ style.css -> @import "tailwindcss";
 
 
 
+
 //Object Oriented Programming
 //js doesnot have classes
 //it is a prototype-based language
@@ -125,3 +126,72 @@ style.css -> @import "tailwindcss";
 //inheritance ()
 //Encapsulation (wrap up data)
 //Polymorphism (many forms)
+
+
+
+
+
+
+
+//Prototypal Behavior in JavaScript
+
+Prototypal behavior refers to the way JavaScript objects inherit 
+properties and methods from other objects through a mechanism called 
+the prototype chain. Instead of using traditional class-based inheritance, 
+JavaScript allows objects to inherit directly from other objects.
+
+When a property or method is accessed on an object, JavaScript first
+ looks for it in that object. If it is not found, JavaScript automatically 
+ searches the object's prototype. This process continues up the prototype 
+ chain until the property is found or the chain ends.
+
+ const person = {
+    greet() {
+        console.log("Hello");
+    }
+};
+
+const student = Object.create(person);
+
+student.greet();
+
+In this example, student does not have a greet() method of its own. 
+JavaScript finds the method in person, which acts as its prototype,
+ and executes it.
+
+
+
+
+
+
+ //Prototype Inheritance in JavaScript
+
+Prototype inheritance is the mechanism by which one object can 
+inherit properties and methods from another object through the 
+prototype chain. It allows objects to share functionality without 
+duplicating code.
+
+In JavaScript, every object has a hidden link to another 
+object called its prototype. When a property or method is
+not found in the current object, JavaScript automatically 
+looks for it in the prototype. This process continues up the 
+prototype chain until the property is found or the chain ends.
+
+Example:
+
+const person = {
+    greet() {
+        console.log("Hello");
+    }
+};
+
+const student = Object.create(person);
+
+student.name = "Prachi";
+
+student.greet();
+
+Here, student does not have its own greet() method. JavaScript 
+looks in its prototype (person), finds greet(), and executes it. 
+Thus, student inherits the method from person.
+
