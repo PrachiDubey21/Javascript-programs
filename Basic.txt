@@ -195,3 +195,11 @@ Here, student does not have its own greet() method. JavaScript
 looks in its prototype (person), finds greet(), and executes it. 
 Thus, student inherits the method from person.
 
+
+
+
+
+
+//execution context
+//for window object access -> {this = windows}
+//for node environment -> {(empty object)} 
