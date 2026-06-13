@@ -36,7 +36,12 @@ const chai = {
 console.log(Object.getOwnPropertyDescriptor(chai, "name"));
 
 Object.defineProperty(chai, 'name', {
+
     //writable: false,
+
+   // making it false makes it non-iterable
+   // enumerable: false,
+
     enumerable: true,
     
 })
